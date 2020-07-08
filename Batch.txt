@@ -1,3 +1,38 @@
 @echo off
-echo Works
+
+:login
+cls
+set /p username=Username: 
+if %username%==placeholder (
+    goto :pass
+) else (
+    goto :login
+)
+:pass
+set /p password=Password: 
+if %password%==password (
+    goto :desktop
+) else (
+    goto :login
+)
+
+:desktop
+cls
+echo Deluge CookieOS [1.0.1.3]
+echo (c) 2020 CookieOS
+echo.
+:command
+set /p command=candy@Deluge$ 
+if %command%==time echo The time is %time%
+goto :command
+
+:crash
+cls
+echo PC Crashed at %time% > logs\crashes.f
+echo Your pc has crashed.
+echo Please report this problem and what you did to CookieOS Support
+echo Press any key to reboot
 pause > nul
+echo.
+start Boot.bat
+exit
