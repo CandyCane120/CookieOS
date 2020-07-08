@@ -1,1 +1,3 @@
-shit
+@echo off
+echo Works
+pause > nul
