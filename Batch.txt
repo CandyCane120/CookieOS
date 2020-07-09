@@ -18,12 +18,15 @@ if %password%==password (
 
 :desktop
 cls
+set user=candy
+set hostname=Deluge
 echo Deluge CookieOS [1.0.1.3]
 echo (c) 2020 CookieOS
 echo.
 :command
-set /p command=candy@Deluge$ 
-if %command%==time echo The time is %time%
+set /p command=%user%@%hostname%$ 
+if %command%==time echo The time is %time% 
+if %command%==usr echo Username is %user%
 goto :command
 
 :crash
